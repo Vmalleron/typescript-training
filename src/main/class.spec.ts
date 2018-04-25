@@ -1,6 +1,6 @@
 describe('class', () => {
 
-  fit('has a constructor for initialization', () => {
+  it('has a constructor for initialization', () => {
     // Create a Musician class
     // Add a constructor that takes one param, the instrument.
     // Set this.instrument to the instrument passed in
@@ -17,7 +17,7 @@ class Musician{
     expect(ringo.instrument).toBe('drums')
   })
 
-  fit('constructor can have default param values', () => {
+  it('constructor can have default param values', () => {
     // Create a Musician class with a constructor
     // Make your class default (using default params) the instrument to 'guitar'
     class Musician {
@@ -33,7 +33,7 @@ class Musician{
       expect(ringo.instrument).toBe('drums')
       }) 
 
-  fit('can have instance methods', () => {
+  it('can have instance methods', () => {
     // Create a Musician class, pass in the instrument to the constructor,
     // and add a play function to the class definition
     
@@ -43,17 +43,17 @@ class Musician{
         this.instrument = instrument;
       }
       play() {
-        return "I'm playing" + this.instrument;
+        return "I'm playing " + this.instrument;
     }
   }
     const musician = new Musician('drums')
 
     expect(musician.play).toBeDefined()
     // expect(Musician.play).toBeUndefined()
-    expect(musician.play()).toBeUndefined()
+    expect(musician.play()).toBe("I'm playing drums") 
   })
 
-  fit('can have static methods and properties', () => {
+  it('can have static methods and properties', () => {
     // Create a Musician class, pass in the instrument to the constructor,
     // create a static property instances (that will hold all created instances) and
     // create a static method create that encapsulates calling constructor
@@ -63,6 +63,12 @@ class Musician{
       constructor(instrument: any = undefined){
         this.instrument = instrument;
       }
+      static instances(){
+
+      }
+      static create([]){
+
+      }
     }
     expect(Musician.create).toBeDefined()
     expect(Musician.instances.length).toBe(0)
@@ -71,7 +77,7 @@ class Musician{
     // expect(john.create).toBeUndefined()
     expect(Musician.instances.length).toBe(1)
 
-    const ringo = Musician.create('drums')
+    const ringo = Musician.create()
     // expect(ringo.create).toBeUndefined()
     expect(Musician.instances.length).toBe(2)
   })
