@@ -36,7 +36,12 @@ class Musician{
   it('can have instance methods', () => {
     // Create a Musician class, pass in the instrument to the constructor,
     // and add a play function to the class definition
-
+    class Musician{
+      instrument : string;
+      constructor(instrument: any = undefined){
+        this.instrument = instrument;
+      }
+    }
     const musician = new Musician()
 
     expect(musician.play).toBeDefined()
