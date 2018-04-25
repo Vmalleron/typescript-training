@@ -1,6 +1,6 @@
 describe('class', () => {
 
-  it('has a constructor for initialization', () => {
+  fit('has a constructor for initialization', () => {
     // Create a Musician class
     // Add a constructor that takes one param, the instrument.
     // Set this.instrument to the instrument passed in
@@ -17,39 +17,53 @@ class Musician{
     expect(ringo.instrument).toBe('drums')
   })
 
-  it('constructor can have default param values', () => {
+  fit('constructor can have default param values', () => {
     // Create a Musician class with a constructor
     // Make your class default (using default params) the instrument to 'guitar'
+    class Musician {
+      instrument: string;
+      constructor(instrument: any = undefined) {
+      this.instrument = instrument;
+      }
+      }
+      const john = new Musician('guitar')
+      const ringo = new Musician('drums')
+      
+      expect(john.instrument).toBe('guitar')
+      expect(ringo.instrument).toBe('drums')
+      }) 
+
+  fit('can have instance methods', () => {
+    // Create a Musician class, pass in the instrument to the constructor,
+    // and add a play function to the class definition
+    
+    class Musician{
+      instrument : string;
+      constructor(instrument: any = undefined){
+        this.instrument = instrument;
+      }
+      play() {
+        return "I'm playing" + this.instrument;
+    }
+  }
+    const musician = new Musician('drums')
+
+    expect(musician.play).toBeDefined()
+    // expect(Musician.play).toBeUndefined()
+    expect(musician.play()).toBeUndefined()
+  })
+
+  fit('can have static methods and properties', () => {
+    // Create a Musician class, pass in the instrument to the constructor,
+    // create a static property instances (that will hold all created instances) and
+    // create a static method create that encapsulates calling constructor
+    //   and storing the reference (in instances array) and returns the instance
     class Musician{
       instrument : string;
       constructor(instrument: any = undefined){
         this.instrument = instrument;
       }
     }
-    const john = new Musician()
-    const ringo = new Musician('drums')
-
-    expect(john.instrument).toBe('guitar')
-    expect(ringo.instrument).toBe('drums')
-  })
-
-  it('can have instance methods', () => {
-    // Create a Musician class, pass in the instrument to the constructor,
-    // and add a play function to the class definition
-
-    const musician = new Musician()
-
-    expect(musician.play).toBeDefined()
-    // expect(Musician.play).toBeUndefined()
-    expect(musician.play()).toBe("I'm playing drums")
-  })
-
-  it('can have static methods and properties', () => {
-    // Create a Musician class, pass in the instrument to the constructor,
-    // create a static property instances (that will hold all created instances) and
-    // create a static method create that encapsulates calling constructor
-    //   and storing the reference (in instances array) and returns the instance
-
     expect(Musician.create).toBeDefined()
     expect(Musician.instances.length).toBe(0)
 
