@@ -23,10 +23,10 @@ class Musician{
     class Musician{
       instrument : string;
       constructor(instrument: any = undefined){
-        this.instrument = instrument;
-      }
+        this.instrument = instrument;       
+      }     
     }
-    const john = new Musician()
+    const john = new Musician('guitar')
     const ringo = new Musician('drums')
 
     expect(john.instrument).toBe('guitar')
