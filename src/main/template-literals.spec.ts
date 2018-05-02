@@ -61,7 +61,7 @@ describe('Template literals', () => {
 
   it('can be curried', () => {
     // Using tagged template strings, write journey function
-    // that will accept following 3 template strings
+
     // and return a string describing the journey
     let journey = one => two => three => `${one}, then ${two} and finally ${three}!`;
 
