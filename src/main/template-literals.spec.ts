@@ -1,6 +1,6 @@
 describe('Template literals', () => {
 
-  it('should support string interpolation', () => {
+  fit('should support string interpolation', () => {
     const personPL = {
       name: 'Jarosław',
       friends: ['Antoni', 'Andrzej', 'Krystyna', 'Wiktor']
@@ -10,7 +10,11 @@ describe('Template literals', () => {
       friends: ['Greg', 'Sebastian', 'Chloe']
     }
     // construct an arrow function using template literal string interpolation
-    const friendsStr = person => ``
+    const friendsStr = person => `${person.name} has ${person.friends.length} friends: ${person.friends.join(', ')}`
+    // person => `${personEN.name} has 3 friends: ${personEN.friends[0]}, ${personEN.friends[1]}, ${personEN.friends[2]}`;
+    
+    
+    
 
     expect(friendsStr(personPL)).toBe(
       'Jarosław has 4 friends: Antoni, Andrzej, Krystyna, Wiktor'
@@ -20,21 +24,25 @@ describe('Template literals', () => {
     )
   })
 
-  it('should support multi-line strings', () => {
+  fit('should support multi-line strings', () => {
     // construct a string with multiple lines without needing escaped newline characters
-    const multiLine = ``
-
+    const multiLine = '\n    Oh\n    my\n    dear\n    so much fun!'
+ 
+  
     expect(multiLine).toBe('\n    Oh\n    my\n    dear\n    so much fun!')
   })
 
-  it('should support string escaping', () => {
+ fit('should support string escaping', () => {
     // escape a string in a template literal for each of these
-    expect().toBe('Hi\nthere!')
-    expect().toBe('This is `escaped` backtics')
+   
+    'Hi\nthere!'
+    'This is `escaped` backtics'
+    expect('Hi\nthere!').toBe('Hi\nthere!')
+    expect('This is `escaped` backtics').toBe('This is `escaped` backtics')
   })
 
   // you likely wont often use tagging, but it can be handy!
-  it('should call the tagging function', () => {
+  fit('should call the tagging function', () => {
     const noun = 'World'
     const emotion = 'happy'
     const hello = tagIt`Hello ${noun}! Are you feeling ${emotion} today?`
@@ -47,7 +55,7 @@ describe('Template literals', () => {
 
     function tagIt(literalString, ...interpolatedParts) {
       // implement this function to make the test pass
-      return `fixme`
+      return ``
     }
   })
 

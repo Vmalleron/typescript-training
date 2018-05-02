@@ -7,11 +7,11 @@ describe('enhanced object literals', () => {
       return {
         type: 'Musician',
         // - in ES5 you'd do:
-        // name: name,
-        // dead: dead,
-        // wantsToPlayWith: function (target){
-        //   return `${this.name} wants to play with ${target.name} ${target.dead ? 'but he is' : 'and he is not'} dead`;
-        // }
+        name: name,
+        dead: dead,
+        wantsToPlayWith: function (target){
+          return `${this.name} wants to play with ${target.name} ${target.dead ? 'but he is' : 'and he is not'} dead`;
+        }
         // - do that in ES6 !
       }
     }

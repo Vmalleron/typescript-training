@@ -1,6 +1,6 @@
 describe('class', () => {
 
-  fit('has a constructor for initialization', () => {
+  it('has a constructor for initialization', () => {
     // Create a Musician class
     // Add a constructor that takes one param, the instrument.
     // Set this.instrument to the instrument passed in
@@ -17,7 +17,7 @@ class Musician{
     expect(ringo.instrument).toBe('drums')
   })
 
-  fit('constructor can have default param values', () => {
+  it('constructor can have default param values', () => {
     // Create a Musician class with a constructor
     // Make your class default (using default params) the instrument to 'guitar'
     class Musician {
@@ -33,7 +33,7 @@ class Musician{
       expect(ringo.instrument).toBe('drums')
       }) 
 
-  fit('can have instance methods', () => {
+  it('can have instance methods', () => {
     // Create a Musician class, pass in the instrument to the constructor,
     // and add a play function to the class definition
     
@@ -53,7 +53,7 @@ class Musician{
     expect(musician.play()).toBe("I'm playing drums") 
   })
 
-  fit('can have static methods and properties', () => {
+  it('can have static methods and properties', () => {
     // Create a Musician class, pass in the instrument to the constructor,
     // create a static property instances (that will hold all created instances) and
     // create a static method create that encapsulates calling constructor
@@ -83,7 +83,7 @@ class Musician{
     expect(Musician.instances.length).toBe(2)
   })
 
-  fit('can extend another class', () => {
+  it('can extend another class', () => {
     // Create a Musician class
     // Create a Rockman class that extends Musician
     // Add play method to Musician
@@ -106,7 +106,7 @@ class Musician{
     expect(rockman.play()).toBe("I'm playing guitar")
   })
 
-  fit('can use property setters and getters', () => {
+  it('can use property setters and getters', () => {
     // Create a Musician class, pass in the instrument to the constructor,
     // Add property getter for description
     class Musician {
@@ -125,7 +125,7 @@ class Musician{
     expect(drummer.description).toBe('this musician plays drums')
   })
 
-  fit('can use property setters and getters', () => {
+  it('can use property setters and getters', () => {
     // Create a Musician class
     // Add property getter for allBands
     // - it will return a string describing all the bands that this musician played in
