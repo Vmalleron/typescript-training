@@ -1,6 +1,6 @@
 describe('Template literals', () => {
 
-  fit('should support string interpolation', () => {
+  it('should support string interpolation', () => {
     const personPL = {
       name: 'Jarosław',
       friends: ['Antoni', 'Andrzej', 'Krystyna', 'Wiktor']
@@ -24,7 +24,7 @@ describe('Template literals', () => {
     )
   })
 
-  fit('should support multi-line strings', () => {
+  it('should support multi-line strings', () => {
     // construct a string with multiple lines without needing escaped newline characters
     const multiLine = '\n    Oh\n    my\n    dear\n    so much fun!'
  
@@ -32,7 +32,7 @@ describe('Template literals', () => {
     expect(multiLine).toBe('\n    Oh\n    my\n    dear\n    so much fun!')
   })
 
- fit('should support string escaping', () => {
+ it('should support string escaping', () => {
     // escape a string in a template literal for each of these
    
     'Hi\nthere!'
@@ -42,7 +42,7 @@ describe('Template literals', () => {
   })
 
   // you likely wont often use tagging, but it can be handy!
-  fit('should call the tagging function', () => {
+  it('should call the tagging function', () => {
     const noun = 'World'
     const emotion = 'happy'
     const hello = tagIt`Hello ${noun}! Are you feeling ${emotion} today?`
@@ -55,7 +55,7 @@ describe('Template literals', () => {
 
     function tagIt(literalString, ...interpolatedParts) {
       // implement this function to make the test pass
-      return ``
+      return `${literalString[0]}dear ${interpolatedParts[0] + literalString[1]}really ${interpolatedParts[1] + literalString[2]}`;
     }
   })
 
@@ -63,7 +63,12 @@ describe('Template literals', () => {
     // Using tagged template strings, write journey function
     // that will accept following 3 template strings
     // and return a string describing the journey
-    let journey;
+    let journey = one => two => three => `${one}, then ${two} and finally ${three}!`;
+
+    
+      
+      
+
 
     expect(journey `Warsaw` `Poznan` `Berlin`).toBe('Warsaw, then Poznan and finally Berlin!')
     expect(journey `Poland` `Czech` `Austria`).toBe('Poland, then Czech and finally Austria!')
