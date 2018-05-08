@@ -8,7 +8,7 @@ describe('Cloning', () => {
 			return clone;
 		}
 
-		fit('can clone simple objects', () => {
+		it('can clone simple objects', () => {
 			var src1 = {
 				a: 1,
 				b: 2,
@@ -31,7 +31,7 @@ describe('Cloning', () => {
 			expect(_.isEqual(src2, clone2)).toEqual(true);
 		});
 
-		fit('can clone objects with methods', () => {
+		it('can clone objects with methods', () => {
 			var src1 = {
 				a: 1,
 				b: 2,
@@ -67,7 +67,7 @@ describe('Cloning', () => {
 
 		}
 
-		fit('can clone nested objects', () => {
+		it('can clone nested objects', () => {
 			var src = {
 				a: 1,
 				b: 2,
@@ -86,7 +86,7 @@ describe('Cloning', () => {
 			expect(_.isEqual(src, clone)).toEqual(true);
 		});
 
-		fit('can clone deeply nested objects', () => {
+		it('can clone deeply nested objects', () => {
 			var src = {
 				a: 1,
 				b: 2,
