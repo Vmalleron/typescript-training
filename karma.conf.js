@@ -31,7 +31,7 @@ module.exports = function (config) {
       
       'src/functions/*.ts',
       'src/functions/various/*.ts',
-      'src/params/*.ts',
+      
       'src/promises/*.ts',
     ],
 
