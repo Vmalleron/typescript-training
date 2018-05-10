@@ -16,7 +16,7 @@ describe('Destructuring', () => {
       }
     }
 
-    fit('can be used to pull apart objects', () => {
+    it('can be used to pull apart objects', () => {
       // Using destructuring, call `getAddress()` and create a 'city', 'voivodeship' and 'zip' variable.
       var address = getAddress();
       var city = address.city;
@@ -30,7 +30,7 @@ describe('Destructuring', () => {
       expect(zip).toBe(24120)
     })
 
-    fit('can alias destructured variables', () => {
+    it('can alias destructured variables', () => {
       // Using destructuring, call `getAddress()` and pull the city, voivodeship and zip out, and alias them to c, v, z, respectively
       var c, v, z;
       [c, v, z] = ['Kazimierz Dolny', 'lubelskie', 24120];
@@ -42,7 +42,7 @@ describe('Destructuring', () => {
       // expect(() => noop(zip)).toThrow()
     })
 
-    fit('can destructure nested variables', () => {
+    it('can destructure nested variables', () => {
       // Using destructuring, call `getAddress()` and create an 'lat' and 'long' variables.
       var lat, long;
       [lat, long] = [51.3180409, 21.9542483]
@@ -51,7 +51,7 @@ describe('Destructuring', () => {
       // expect(() => noop(coords)).toThrow()
     })
 
-    fit('can destructure both top-level and nested variables', () => {
+    it('can destructure both top-level and nested variables', () => {
       // Using destructuring, call `getAddress()` and create a 'city', 'lat' and 'long' variables.
       var city, lat, long;
       [city, lat, long] = ['Kazimierz Dolny', 51.3180409, 21.9542483]
@@ -68,7 +68,7 @@ describe('Destructuring', () => {
       return [1, 2, 3, 4, 5, 6]
     }
 
-    fit('can be used to pull apart arrays', () => {
+    it('can be used to pull apart arrays', () => {
       // Call getNumbers and pull the first value out as `one` and the second as `two`
       let number = getNumbers();
       let one = number[0];
@@ -78,7 +78,7 @@ describe('Destructuring', () => {
       expect(two).toBe(2)
 })
 
-    fit('can skip indexes in arrays', () => {
+    it('can skip indexes in arrays', () => {
       // Call getNumbers and pull the first value out as `one` and the third as `three`
       let number = getNumbers();
       let one = 1;
@@ -90,7 +90,7 @@ describe('Destructuring', () => {
       // expect(() => noop(two)).toThrow()
     })
 
-		fit('can reach nested arrays', () => {
+		it('can reach nested arrays', () => {
       // Call getNestedNumbers and pull the first value out as `one`, the 3 as `three` and 6 as `sixth`.
       let number = getNumbers();
       let one = 1;
@@ -114,7 +114,7 @@ describe('Destructuring', () => {
 			};
 		}
 
-		fit('can be used to process object attributes in a loop', () => {
+		it('can be used to process object attributes in a loop', () => {
 			// WARNING, this exercise is TRICKY!
 			// you're supposed to get all number values included in the object
 			// and update these values using `process` function below
